@@ -39,12 +39,16 @@ enum Enum_Card_color {
 	Enum_Card_color_SIZE = 5	
 };
 
-public class Card  {
+public class Card : MonoBehaviour  {
+
 
 	private Enum_Card_number m_cardNumber;
 	private Enum_Card_shape m_cardShape;
 	private Enum_Card_color m_cardColor;
 	private Enum_Card_type m_cardType;
+
+	private bool m_isCardSelected = false;
+	private SpriteRenderer sr = null;
 
 	 Card( Enum_Card_number i_cardValue,
 	             Enum_Card_shape i_cardShape,
@@ -55,10 +59,12 @@ public class Card  {
 		setCardShape(i_cardShape);
 		setCardColor(i_cardColor);
 		setCardType(i_cardType);
+
+
 	}
 
 	 Enum_Card_number getCardValue(){return m_cardNumber;}
-	Enum_Card_shape getCardShape(){return m_cardShape;}
+	 Enum_Card_shape getCardShape(){return m_cardShape;}
 	 Enum_Card_color getCardColor(){return m_cardColor;}
 	 Enum_Card_type getCardType(){return m_cardType;}
 
@@ -72,10 +78,23 @@ public class Card  {
 
 
 	// Use this for initialization
-	void Start ()	{}
+	void Start ()	{
+		SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
+	}
 	
 	// Update is called once per frame
 	void Update (){}
+
+	void OnMouseDown(){
+		SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
+		if (m_isCardSelected) {
+			m_isCardSelected = false;
+			sr.color = new Color(1f, 1f, 1f, 1f);
+		} else {
+			m_isCardSelected = true;
+			sr.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+		}
+	}   
 
 
 
