@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-enum Enum_Card_number{
+public enum Enum_Card_number{
 	Enum_Card_number_one = 1,
 	Enum_Card_number_two = 2,
 	Enum_Card_number_three = 3,
@@ -11,7 +11,7 @@ enum Enum_Card_number{
 
 };
 
-enum Enum_Card_shape{
+public enum Enum_Card_shape{
 	Enum_Card_shape_heart = 1,
 	Enum_Card_shape_diamond = 2,
 	Enum_Card_shape_colver = 3,
@@ -22,7 +22,7 @@ enum Enum_Card_shape{
 };
 
 
-enum Enum_Card_type{
+public enum Enum_Card_type{
 	Enum_Card_type_regular = 1,
 	Enum_Card_type_bonus = 2,
 	Enum_Card_type_penalty = 3,
@@ -30,7 +30,7 @@ enum Enum_Card_type{
 	Enum_Card_type_SIZE = 4	
 };
 
-enum Enum_Card_color {
+public enum Enum_Card_color {
 	Enum_Card_color_blue = 1,
 	Enum_Card_color_red = 2,
 	Enum_Card_color_green = 3,
@@ -63,10 +63,10 @@ public class Card : MonoBehaviour  {
 
 	}
 
-	 Enum_Card_number getCardValue(){return m_cardNumber;}
-	 Enum_Card_shape getCardShape(){return m_cardShape;}
-	 Enum_Card_color getCardColor(){return m_cardColor;}
-	 Enum_Card_type getCardType(){return m_cardType;}
+	public Enum_Card_number getCardValue(){return m_cardNumber;}
+	public Enum_Card_shape getCardShape(){return m_cardShape;}
+	public Enum_Card_color getCardColor(){return m_cardColor;}
+	public Enum_Card_type getCardType(){return m_cardType;}
 
 	private void setCardValue(Enum_Card_number i_number){ m_cardNumber = i_number;}
 	private void setCardShape(Enum_Card_shape i_shape){ m_cardShape = i_shape;}
