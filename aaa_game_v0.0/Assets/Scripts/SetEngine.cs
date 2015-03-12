@@ -16,10 +16,10 @@ public class SetEngine : MonoBehaviour {
 	bool IsSet (Card i_card1, Card i_card2, Card i_card3) {
 
 		/* check color is all identical or all diffrent*/
-		if ((i_card1.getCardColor() == i_card2.getCardColor() && i_card2.getCardColor() == i_card3.getCardColor()) ||
-		    i_card1.getCardColor() != i_card2.getCardColor() &&
-		    i_card2.getCardColor() != i_card3.getCardColor() &&
-		    i_card1.getCardColor() != i_card3.getCardColor()){
+		if ((i_card1.cardColor == i_card2.cardColor && i_card2.cardColor == i_card3.cardColor) ||
+		    i_card1.cardColor != i_card2.cardColor &&
+		    i_card2.cardColor != i_card3.cardColor &&
+		    i_card1.cardColor != i_card3.cardColor){
 			/*Do nothing*/
 		}
 			else {
@@ -27,10 +27,10 @@ public class SetEngine : MonoBehaviour {
 		}
 
 		/* check Shape is all identical or all diffrent*/
-		if ((i_card1.getCardShape() == i_card2.getCardShape() && i_card2.getCardShape() == i_card3.getCardShape()) ||
-		    i_card1.getCardShape() != i_card2.getCardShape() &&
-		    i_card2.getCardShape() != i_card3.getCardShape() &&
-		    i_card1.getCardShape() != i_card3.getCardShape()){
+		if ((i_card1.cardShape == i_card2.cardShape && i_card2.cardShape == i_card3.cardShape) ||
+		    i_card1.cardShape != i_card2.cardShape &&
+		    i_card2.cardShape != i_card3.cardShape &&
+		    i_card1.cardShape != i_card3.cardShape){
 			/*Do nothing*/
 		}
 		else {
@@ -39,10 +39,10 @@ public class SetEngine : MonoBehaviour {
 
 
 		/* check Value is all identical or all diffrent*/
-		if ((i_card1.getCardValue() == i_card2.getCardValue() && i_card2.getCardValue() == i_card3.getCardValue()) ||
-		    i_card1.getCardValue() != i_card2.getCardValue() &&
-		    i_card2.getCardValue() != i_card3.getCardValue() &&
-		    i_card1.getCardValue() != i_card3.getCardValue()){
+		if ((i_card1.cardNumber == i_card2.cardNumber && i_card2.cardNumber == i_card3.cardNumber) ||
+		    i_card1.cardNumber != i_card2.cardNumber &&
+		    i_card2.cardNumber != i_card3.cardNumber &&
+		    i_card1.cardNumber != i_card3.cardNumber){
 			/*Do nothing*/
 		}
 		else {
@@ -50,10 +50,10 @@ public class SetEngine : MonoBehaviour {
 		}
 
 		/* check Type is all identical or all diffrent*/
-		if ((i_card1.getCardType() == i_card2.getCardType() && i_card2.getCardType() == i_card3.getCardType()) ||
-		    i_card1.getCardType() != i_card2.getCardType() &&
-		    i_card2.getCardType() != i_card3.getCardType() &&
-		    i_card1.getCardType() != i_card3.getCardType()){
+		if ((i_card1.cardType == i_card2.cardType && i_card2.cardType == i_card3.cardType) ||
+		    i_card1.cardType != i_card2.cardType &&
+		    i_card2.cardType != i_card3.cardType &&
+		    i_card1.cardType != i_card3.cardType){
 			/*Do nothing*/
 		}
 		else {
