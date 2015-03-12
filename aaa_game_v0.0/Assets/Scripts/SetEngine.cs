@@ -4,16 +4,14 @@ using System.Collections;
 public class SetEngine : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-	
-	}
+	void Start () {}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () {}
 	
-	}
 
-	bool IsSet (Card i_card1, Card i_card2, Card i_card3) {
+
+	public bool IsSet (Card i_card1, Card i_card2, Card i_card3) {
 
 		/* check color is all identical or all diffrent*/
 		if ((i_card1.cardColor == i_card2.cardColor && i_card2.cardColor == i_card3.cardColor) ||

@@ -42,8 +42,10 @@ public class Card : MonoBehaviour  {
 	public Enum_Card_shape m_cardShape;
 	public Enum_Card_color m_cardColor;
 	public Enum_Card_type m_cardType;
-	public bool m_isCardSelected = false;
-	private SpriteRenderer sr = null;
+
+	public GameObject levelController;
+	private bool m_isCardSelected = false;
+	private SpriteRenderer sr;
 	
 	public Enum_Card_number cardNumber{ get; set; }		
 	public Enum_Card_shape cardShape{ get; set; }
@@ -69,24 +71,41 @@ public class Card : MonoBehaviour  {
 		}
 		
 		// Update is called once per frame
-		void Update (){}
+		void Update (){
+
+
+
+	}
 	
-		void OnMouseDown(){
-		Debug.Log("unselect");
-			SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
-			if (m_isCardSelected) {
-				m_isCardSelected = false;
-				sr.color = new Color(1f, 1f, 1f, 1f);
+	void OnMouseDown ()
+	{
+		LevelController[] controller = levelController.GetComponents<LevelController> ();
+		Debug.Log("OnMouseDown");
+
+		if (m_isCardSelected) 
+		{
+			controller [0].deccreanentCardCount();
+			m_isCardSelected = false;
+			sr.color = new Color(1f, 1f, 1f, 1f);
 			Debug.Log("unselect");
-			} else {
-				m_isCardSelected = true;
-				sr.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+		} 
+		else if(controller [0].canPeakCard ()) //check we don't choose more than max cards for set
+		{
+			controller [0].increanentCardCount();
+			//controller [0].addCard();
+			m_isCardSelected = true;
+			sr.color = new Color(0.5f, 0.5f, 0.5f, 1f);
 			Debug.Log("select");
-			}
-		}   
-	
-	
-	
+		}
+	}   
+
+
+//	Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+//	RaycastHit hit;
+//	// Casts the ray and get the first game object hit
+//	Physics.Raycast(ray, out hit);
+//	Debug.Log("This hit at " + hit.point );
+
 }
 
 
