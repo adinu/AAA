@@ -32,9 +32,10 @@ public class SetEngine : MonoBehaviour {
 
 		/* check Shape is all identical or all diffrent*/
 		if ((card1.cardShape == card2.cardShape && card2.cardShape == card3.cardShape) ||
-		    card1.cardShape != card2.cardShape &&
+		    (card1.cardShape != card2.cardShape &&
 		    card2.cardShape != card3.cardShape &&
-		    card1.cardShape != card3.cardShape){
+		    card1.cardShape != card3.cardShape)){
+			Debug.Log("pass shape test");
 			/*Do nothing*/
 		}
 		else {
@@ -44,9 +45,10 @@ public class SetEngine : MonoBehaviour {
 
 		/* check Value is all identical or all diffrent*/
 		if ((card1.cardNumber == card2.cardNumber && card2.cardNumber == card3.cardNumber) ||
-		    card1.cardNumber != card2.cardNumber &&
+		    (card1.cardNumber != card2.cardNumber &&
 		    card2.cardNumber != card3.cardNumber &&
-		    card1.cardNumber != card3.cardNumber){
+		    card1.cardNumber != card3.cardNumber)){
+			Debug.Log("pass number test");
 			/*Do nothing*/
 		}
 		else {
@@ -55,9 +57,10 @@ public class SetEngine : MonoBehaviour {
 
 		/* check Type is all identical or all diffrent*/
 		if ((card1.cardType == card2.cardType && card2.cardType == card3.cardType) ||
-		    card1.cardType != card2.cardType &&
+		    (card1.cardType != card2.cardType &&
 		    card2.cardType != card3.cardType &&
-		    card1.cardType != card3.cardType){
+		    card1.cardType != card3.cardType)){
+			Debug.Log("pass fill test");
 			/*Do nothing*/
 		}
 		else {

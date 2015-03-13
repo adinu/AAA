@@ -5,35 +5,35 @@ public enum Enum_Card_number{
 	Enum_Card_number_one = 1,
 	Enum_Card_number_two = 2,
 	Enum_Card_number_three = 3,
-	Enum_Card_number_four = 4,
+	//Enum_Card_number_four = 4,
 	
-	Enum_Card_number_SIZE = 5
+	Enum_Card_number_SIZE = 4
 };
 
 public enum Enum_Card_shape{
-	Enum_Card_shape_heart = 1,
-	Enum_Card_shape_diamond = 2,
-	Enum_Card_shape_colver = 3,
-	Enum_Card_shape_blackHeart = 4,
+	Enum_Card_shape_bamba = 1,
+	Enum_Card_shape_peanut = 2,
+	Enum_Card_shape_diamond = 3,
+	//Enum_Card_shape_blackHeart = 4,
 	
-	Enum_Card_shape_SIZE = 5	
+	Enum_Card_shape_SIZE = 4
 };
 
-public enum Enum_Card_type{
-	Enum_Card_type_regular = 1,
-	Enum_Card_type_bonus = 2,
-	Enum_Card_type_penalty = 3,
+public enum Enum_Card_fill{
+	Enum_Card_fill_noFill = 1,
+	Enum_Card_fill_fullFill = 2,
+	Enum_Card_fill_stripe = 3,
 	
 	Enum_Card_type_SIZE = 4	
 };
 
 public enum Enum_Card_color {
-	Enum_Card_color_blue = 1,
-	Enum_Card_color_red = 2,
-	Enum_Card_color_green = 3,
-	Enum_Card_color_yellow = 4,
+	Enum_Card_color_green = 1,
+	Enum_Card_color_purple = 2,
+	Enum_Card_color_red = 3,
+	//Enum_Card_color_yellow = 4,
 	
-	Enum_Card_color_SIZE = 5	
+	Enum_Card_color_SIZE = 4
 };
 
 public class Card : MonoBehaviour  {
@@ -41,7 +41,7 @@ public class Card : MonoBehaviour  {
 	public Enum_Card_number m_cardNumber;
 	public Enum_Card_shape m_cardShape;
 	public Enum_Card_color m_cardColor;
-	public Enum_Card_type m_cardType;
+	public Enum_Card_fill m_cardFill;
 
 	public GameObject levelController;
 	private bool m_isCardSelected = false;
@@ -51,7 +51,7 @@ public class Card : MonoBehaviour  {
 	public Enum_Card_number cardNumber{ get; set; }		
 	public Enum_Card_shape cardShape{ get; set; }
 	public Enum_Card_color cardColor{ get; set; }
-	public Enum_Card_type cardType{ get; set; }
+	public Enum_Card_fill cardType{ get; set; }
 
 
 	void Start ()	{

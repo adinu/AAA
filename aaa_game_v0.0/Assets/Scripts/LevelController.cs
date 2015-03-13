@@ -39,7 +39,7 @@ public class LevelController : MonoBehaviour {
 			if(card != null) {
 				Debug.Log(( card.GetComponent<Card>().m_cardColor.ToString() )+
 				          " / " + card.GetComponent<Card>().m_cardNumber.ToString() +
-				          "\n" + card.GetComponent<Card>().m_cardType.ToString() +
+				          "\n" + card.GetComponent<Card>().m_cardFill.ToString() +
 				          " / " + card.GetComponent<Card>().m_cardShape.ToString() );
 			}
 		}
