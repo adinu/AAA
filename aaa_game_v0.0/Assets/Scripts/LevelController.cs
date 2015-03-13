@@ -14,10 +14,11 @@ public class LevelController : MonoBehaviour {
 	public void addCard(GameObject i_card)
 	{
 		if (canPeakCard) {
-			//Debug.Log ("addCard");
+		
 			for(int i = 0; i < cardsAddedToSet.Length; i++){
 				if (cardsAddedToSet[i] == null){
 					cardsAddedToSet[i] = i_card;
+					Debug.Log ("addCard");
 					printCardsList();
 					break;
 				}

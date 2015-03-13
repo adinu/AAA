@@ -51,7 +51,7 @@ public class Card : MonoBehaviour  {
 	public Enum_Card_number cardNumber{ get; set; }		
 	public Enum_Card_shape cardShape{ get; set; }
 	public Enum_Card_color cardColor{ get; set; }
-	public Enum_Card_fill cardType{ get; set; }
+	public Enum_Card_fill cardFill{ get; set; }
 
 
 	void Start ()	{
@@ -76,6 +76,7 @@ public class Card : MonoBehaviour  {
 						controller [0].increanentCardCount ();
 						RayCast();
 						 controller [0].addCard(card);
+
 						m_isCardSelected = true;
 						sr.color = new Color (0.5f, 0.5f, 0.5f, 1f);
 				}
@@ -90,7 +91,7 @@ public class Card : MonoBehaviour  {
 		string res = "color:" + i_card.cardColor.ToString () + 
 						"number:" + i_card.cardNumber.ToString () + 
 						"shape:" + i_card.cardShape.ToString () + 
-						"type:" + i_card.cardType.ToString ();
+						"type:" + i_card.cardFill.ToString ();
 
 		return res;
 		}
