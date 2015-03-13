@@ -53,7 +53,7 @@
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\RaycastExample.cs" />
      <Compile Include="Assets\Scripts\SetEngine.cs" />
-     <Compile Include="Assets\arrowScript.cs" />
+     <Compile Include="Assets\Scripts\arrowScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

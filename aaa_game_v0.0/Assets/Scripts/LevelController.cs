@@ -5,13 +5,13 @@ using System.Collections.Generic;
 public class LevelController : MonoBehaviour {
 
 	public int numCardsInSet;
-	private int numOfCardsSelected = 0;
+	private  int numOfCardsSelected = 0;
 	List<Card> cardsAdded;
 
 
 	public void addCard(Card i_card)
 	{
-		if (canPeakCard ()) {
+		if (canPickCard ()) {
 			foreach (Card card in cardsAdded) /*Search empty place and add card*/
 			{
 				if(card == null) {
@@ -36,6 +36,7 @@ public class LevelController : MonoBehaviour {
 
 	public void increanentCardCount(){
 				numOfCardsSelected++;
+		//TODO: check if count = numCardsInSet -> call isSetMethod 
 		}
 
 	public void deccreanentCardCount(){
@@ -46,7 +47,7 @@ public class LevelController : MonoBehaviour {
 		return numOfCardsSelected;
 	}
 
-	public bool canPeakCard()
+	public bool canPickCard()
 	{
 		return numOfCardsSelected < numCardsInSet ?  true:  false;
 	}

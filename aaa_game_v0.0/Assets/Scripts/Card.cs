@@ -80,6 +80,8 @@ public class Card : MonoBehaviour  {
 			if (collider2D == Physics2D.OverlapPoint(touchPos))
 			{
 				GameObject  card = collider2D.gameObject;
+
+
 				counter++;
 				Debug.Log(counter  + "    card.GetType: " + card.GetType().ToString());
 
@@ -92,7 +94,7 @@ public class Card : MonoBehaviour  {
 				} else if (controller [0].canPickCard ()) { //check we don't choose more than max cards for set
 						controller [0].increanentCardCount ();
 						RayCast();
-						//controller [0].addCard();
+						//TODO: controller [0].addCard(card);
 						m_isCardSelected = true;
 						sr.color = new Color (0.5f, 0.5f, 0.5f, 1f);
 						//Debug.Log ("select");
