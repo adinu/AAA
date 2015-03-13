@@ -11,13 +11,19 @@ public class SetEngine : MonoBehaviour {
 	
 
 
-	public bool IsSet (Card i_card1, Card i_card2, Card i_card3) {
+	public bool IsSet (GameObject[] cardsAddedToSet){
+		Card card1 = cardsAddedToSet[0].GetComponent<Card>();
+		Card card2 = cardsAddedToSet[1].GetComponent<Card>();
+		Card card3 = cardsAddedToSet[2].GetComponent<Card>();
+
+		Debug.Log("IsSet");
 
 		/* check color is all identical or all diffrent*/
-		if ((i_card1.cardColor == i_card2.cardColor && i_card2.cardColor == i_card3.cardColor) ||
-		    i_card1.cardColor != i_card2.cardColor &&
-		    i_card2.cardColor != i_card3.cardColor &&
-		    i_card1.cardColor != i_card3.cardColor){
+		if ((card1.cardColor == card2.cardColor && card2.cardColor == card3.cardColor) ||
+		    (card1.cardColor != card2.cardColor &&
+		    card2.cardColor != card3.cardColor &&
+		    card1.cardColor != card3.cardColor)){
+			Debug.Log("pass color test");
 			/*Do nothing*/
 		}
 			else {
@@ -25,10 +31,10 @@ public class SetEngine : MonoBehaviour {
 		}
 
 		/* check Shape is all identical or all diffrent*/
-		if ((i_card1.cardShape == i_card2.cardShape && i_card2.cardShape == i_card3.cardShape) ||
-		    i_card1.cardShape != i_card2.cardShape &&
-		    i_card2.cardShape != i_card3.cardShape &&
-		    i_card1.cardShape != i_card3.cardShape){
+		if ((card1.cardShape == card2.cardShape && card2.cardShape == card3.cardShape) ||
+		    card1.cardShape != card2.cardShape &&
+		    card2.cardShape != card3.cardShape &&
+		    card1.cardShape != card3.cardShape){
 			/*Do nothing*/
 		}
 		else {
@@ -37,10 +43,10 @@ public class SetEngine : MonoBehaviour {
 
 
 		/* check Value is all identical or all diffrent*/
-		if ((i_card1.cardNumber == i_card2.cardNumber && i_card2.cardNumber == i_card3.cardNumber) ||
-		    i_card1.cardNumber != i_card2.cardNumber &&
-		    i_card2.cardNumber != i_card3.cardNumber &&
-		    i_card1.cardNumber != i_card3.cardNumber){
+		if ((card1.cardNumber == card2.cardNumber && card2.cardNumber == card3.cardNumber) ||
+		    card1.cardNumber != card2.cardNumber &&
+		    card2.cardNumber != card3.cardNumber &&
+		    card1.cardNumber != card3.cardNumber){
 			/*Do nothing*/
 		}
 		else {
@@ -48,10 +54,10 @@ public class SetEngine : MonoBehaviour {
 		}
 
 		/* check Type is all identical or all diffrent*/
-		if ((i_card1.cardType == i_card2.cardType && i_card2.cardType == i_card3.cardType) ||
-		    i_card1.cardType != i_card2.cardType &&
-		    i_card2.cardType != i_card3.cardType &&
-		    i_card1.cardType != i_card3.cardType){
+		if ((card1.cardType == card2.cardType && card2.cardType == card3.cardType) ||
+		    card1.cardType != card2.cardType &&
+		    card2.cardType != card3.cardType &&
+		    card1.cardType != card3.cardType){
 			/*Do nothing*/
 		}
 		else {
