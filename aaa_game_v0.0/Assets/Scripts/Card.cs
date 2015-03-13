@@ -77,9 +77,9 @@ public class Card : MonoBehaviour  {
 		{
 			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (collider2D == Physics2D.OverlapPoint(touchPos))
+			if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
 			{
-				GameObject  card = collider2D.gameObject;
+				GameObject  card = GetComponent<Collider2D>().gameObject;
 
 
 				counter++;
