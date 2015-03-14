@@ -4,19 +4,30 @@ using System.Collections.Generic;
 
 public class LevelController : MonoBehaviour {
 
+	public GameObject setEngineObject;
 	public int numCardsInSet;
 	private  int numOfCardsSelected = 0;
-	List<Card> cardsAdded;
+	private SetEngine setEngine;
+	private bool canPeakCard= true;
+	GameObject[] cardsAddedToSet;
 
-
-	public void addCard(Card i_card)
+	public void addCard(GameObject i_card)
 	{
-		if (canPickCard ()) {
-			foreach (Card card in cardsAdded) /*Search empty place and add card*/
-			{
-				if(card == null) {
-					cardsAdded.Add(i_card);
+		if (canPeakCard) {
+		
+			for(int i = 0; i < cardsAddedToSet.Length; i++){
+				if (cardsAddedToSet[i] == null){
+					cardsAddedToSet[i] = i_card;
+					Debug.Log ("addCard");
+					printCardsList();
 					break;
+				}
+			}
+
+			if(numCardsInSet == numOfCardsSelected)
+			{
+				if(setEngine.IsSet(cardsAddedToSet)){
+					Debug.Log("****  SET FOUND  ****");
 				}
 			}
 		}
@@ -24,19 +35,19 @@ public class LevelController : MonoBehaviour {
 
 	public void printCardsList()
 	{
-		foreach (Card card in cardsAdded) /*Search empty place and add card*/
+		foreach (GameObject card in cardsAddedToSet) /*Search empty place and add card*/
 		{
 			if(card != null) {
-				Debug.Log("new card:");
-				Debug.Log(card.cardColor.ToString() + " " + card.m_cardNumber.ToString() +" " + card.m_cardType.ToString() + " " + card.m_cardShape.ToString() );
-				break;
+				Debug.Log(( card.GetComponent<Card>().m_cardColor.ToString() )+
+				          " / " + card.GetComponent<Card>().m_cardNumber.ToString() +
+				          "\n" + card.GetComponent<Card>().m_cardFill.ToString() +
+				          " / " + card.GetComponent<Card>().m_cardShape.ToString() );
 			}
 		}
 		}
 
 	public void increanentCardCount(){
 				numOfCardsSelected++;
-		//TODO: check if count = numCardsInSet -> call isSetMethod 
 		}
 
 	public void deccreanentCardCount(){
@@ -49,12 +60,14 @@ public class LevelController : MonoBehaviour {
 
 	public bool canPickCard()
 	{
+
+		canPeakCard= numOfCardsSelected < numCardsInSet ?  true:  false; 
 		return numOfCardsSelected < numCardsInSet ?  true:  false;
 	}
-
-	// Use this for initialization
+	
 	void Start () {
-		cardsAdded = new List<Card>();
+		cardsAddedToSet = new GameObject[numCardsInSet];
+		setEngine = setEngineObject.GetComponent<SetEngine>();
 	}
 	
 	// Update is called once per frame
