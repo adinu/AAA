@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Card.cs" />
      <Compile Include="Assets\Scripts\Deck.cs" />
+     <Compile Include="Assets\Scripts\Enums.cs" />
      <Compile Include="Assets\Scripts\GUIDummy.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GuiBtnsManager.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\Scripts\SetEngine.cs" />
      <Compile Include="Assets\Scripts\TimerEvents.cs" />
      <Compile Include="Assets\Scripts\arrowScript.cs" />
+     <Compile Include="Assets\SessionScore.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

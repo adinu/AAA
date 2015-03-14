@@ -1,8 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour {
+
+	//TIMER
+	public float startTime;
+	private string currentTime;
+	public Slider timerSlider;
+	public Text timerText;
+	private bool isTimeUp = false;
+
 
 	public GameObject setEngineObject;
 	public int numCardsInSet;
@@ -78,14 +87,56 @@ public class LevelController : MonoBehaviour {
 		canPeakCard= numOfCardsSelected < numCardsInSet ?  true:  false; 
 		return numOfCardsSelected < numCardsInSet ?  true:  false;
 	}
-	
-	void Start () {
+
+	public void Awake()
+	{
+		TimerEvents.onAddTime += this.AddTime;
+		TimerEvents.onSubstractTime += this.SubTime;
+	}
+
+	public void Destroy() 
+	{
+		TimerEvents.onAddTime -= this.AddTime;
+		TimerEvents.onSubstractTime -= this.SubTime;
+	}
+
+		void Start () {
 		cardsAddedToSet = new GameObject[numCardsInSet];
 		setEngine = setEngineObject.GetComponent<SetEngine>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		timerUpdate ();
+
 	}
+
+	void timerUpdate() {
+				startTime -= Time.deltaTime;
+				currentTime = string.Format ("{0:0.0}", startTime);
+				timerSlider.value = startTime;
+				timerText.text = currentTime;
+				if (startTime <= 0) {
+						// TIME UP
+						startTime = 0;
+						isTimeUp = true;
+						print ("timeUp");
+			}
+	}
+	public void AddTime(float deltaTime) {
+		float extraTimeFromDelta = ((deltaTime + startTime) > timerSlider.maxValue)
+			? timerSlider.maxValue - startTime: deltaTime;
+		if (!isTimeUp) {
+			startTime += extraTimeFromDelta;
+		}
+	}
+
+	public void SubTime(float deltaTime) {
+		if (!isTimeUp && deltaTime < startTime) {
+			startTime -= deltaTime;
+	}
+}
+	
+	
+	
 }
