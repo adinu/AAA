@@ -1,27 +1,21 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelController.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Enums.cs" Line="38" Column="5" />
-      <File FileName="Assets\Scripts\SetEngine.cs" Line="55" Column="1" />
-      <File FileName="Assets\Scripts\LevelController.cs" Line="8" Column="9" />
-      <File FileName="Assets\Scripts\Card.cs" Line="57" Column="18" />
-      <File FileName="Assets\Scripts\Deck.cs" Line="1" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SetEngine.cs">
     <Files>
-      <File FileName="Assets\Scripts\ScoreManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="29" Column="24" />
->>>>>>> origin/master
+      <File FileName="Assets\Scripts\Enums.cs" Line="41" Column="1" />
+      <File FileName="Assets\Scripts\SetEngine.cs" Line="70" Column="35" />
+      <File FileName="Assets\Scripts\LevelController.cs" Line="29" Column="31" />
+      <File FileName="Assets\Scripts\Card.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Deck.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\arrowScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RaycastExample.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="LevelController.cs" selected="True" />
+              <Node name="SetEngine.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -38,8 +32,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="27" />
       <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="8" />
+      <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="43" />
+      <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="29" />
+      <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="27" />
+      <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="16" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>

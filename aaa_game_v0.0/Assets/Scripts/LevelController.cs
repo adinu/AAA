@@ -28,6 +28,7 @@ public class LevelController : MonoBehaviour {
 			{
 				if(setEngine.IsSet(cardsAddedToSet)){
 					Debug.Log("****  SET FOUND  ****");
+
 				} 
 				else {
 					Debug.Log("!!!!  SET NOT FOUND  !!!!");
@@ -35,7 +36,7 @@ public class LevelController : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	public void removeCard(GameObject i_card)
 	{
 			for(int i = 0; i < cardsAddedToSet.Length; i++){
@@ -62,6 +63,7 @@ public class LevelController : MonoBehaviour {
 
 	public void increanentCardCount(){
 				numOfCardsSelected++;
+		Debug.Log(numOfCardsSelected + "increanentCardCount");
 		}
 
 	public void deccreanentCardCount(){
@@ -74,14 +76,16 @@ public class LevelController : MonoBehaviour {
 
 	public bool canPickCard()
 	{
-
+		Debug.Log(numOfCardsSelected + "numOfCardsSelected");
+		Debug.Log(numCardsInSet + "numCardsInSet");
 		canPeakCard= numOfCardsSelected < numCardsInSet ?  true:  false; 
-		return numOfCardsSelected < numCardsInSet ?  true:  false;
+		return canPeakCard;
 	}
 	
 	void Start () {
 		cardsAddedToSet = new GameObject[numCardsInSet];
 		setEngine = setEngineObject.GetComponent<SetEngine>();
+		numOfCardsSelected = 0;
 	}
 	
 	// Update is called once per frame

@@ -48,11 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Card.cs" />
      <Compile Include="Assets\Scripts\Deck.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Scripts\Enums.cs" />
-=======
      <Compile Include="Assets\Scripts\GameManager.cs" />
->>>>>>> origin/master
      <Compile Include="Assets\Scripts\GuiBtnsManager.cs" />
      <Compile Include="Assets\Scripts\LevelController.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
