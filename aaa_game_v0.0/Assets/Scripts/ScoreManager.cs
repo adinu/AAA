@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake() {
 		text = GetComponent<Text> ();
-		score = 5;
+		//score = 5;
 	}
 	void Update () {
 		text.text = "Score: " + score;
