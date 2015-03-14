@@ -61,30 +61,9 @@ public class Card : MonoBehaviour  {
 		
 	void Update()
 	{
-		if (Input.GetMouseButtonDown(0))
+		/*if (Input.GetMouseButtonDown(0))
 		{
-			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
-			{
-				GameObject  card = GetComponent<Collider2D>().gameObject;
-				LevelController[] controller = levelController.GetComponents<LevelController> ();
-				if (m_isCardSelected) {
-						controller [0].deccreanentCardCount ();
-						m_isCardSelected = false;
-						controller [0].removeCard(card);
-						sr.color = new Color (1f, 1f, 1f, 1f);						
-				} else if (controller [0].canPickCard ()) { //check we don't choose more than max cards for set
-						controller [0].increanentCardCount ();
-						RayCast();
-						controller [0].addCard(card);
-
-						m_isCardSelected = true;
-						sr.color = new Color (0.5f, 0.5f, 0.5f, 1f);
-				}
-				
-			}
-		}
+		}*/
 	}
 
 
@@ -98,7 +77,31 @@ public class Card : MonoBehaviour  {
 		return res;
 		}
 
-	//void OnMouseDown (){}
+	void OnMouseDown (){
+		//Debug.Log(this.ToString());
+		Vector3 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		Vector2 touchPos = new Vector2(wp.x, wp.y);
+		if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
+		{
+			GameObject  card = GetComponent<Collider2D>().gameObject;
+			LevelController[] controller = levelController.GetComponents<LevelController> ();
+			//Debug.Log(controller [0].canPickCard () + "controller can pick");
+			if (m_isCardSelected) {
+				controller [0].deccreanentCardCount ();
+				m_isCardSelected = false;
+				controller [0].removeCard(card);
+				sr.color = new Color (1f, 1f, 1f, 1f);						
+			} else if (controller [0].canPickCard ()) { //check we don't choose more than max cards for set			
+				controller [0].increanentCardCount ();
+				RayCast();
+				controller [0].addCard(card);
+				
+				m_isCardSelected = true;
+				sr.color = new Color (0.5f, 0.5f, 0.5f, 1f);
+			}
+			
+		}
+	}
 		
 	public void RayCast(){
 //		RaycastHit hit;
