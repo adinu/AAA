@@ -11,9 +11,9 @@ public enum Enum_Card_number{
 };
 
 public enum Enum_Card_shape{
-	Enum_Card_shape_bamba = 1,
-	Enum_Card_shape_peanut = 2,
-	Enum_Card_shape_diamond = 3,
+	Enum_Card_shape_circle = 1,
+	Enum_Card_shape_triangle = 2,
+	Enum_Card_shape_square = 3,
 	//Enum_Card_shape_blackHeart = 4,
 	
 	Enum_Card_shape_SIZE = 4
@@ -28,8 +28,8 @@ public enum Enum_Card_fill{
 };
 
 public enum Enum_Card_color {
-	Enum_Card_color_green = 1,
-	Enum_Card_color_purple = 2,
+	Enum_Card_color_blue = 1,
+	Enum_Card_color_yellow = 2,
 	Enum_Card_color_red = 3,
 	//Enum_Card_color_yellow = 4,
 	
@@ -53,7 +53,8 @@ public class Card : MonoBehaviour  {
 	public Enum_Card_color cardColor{ get; set; }
 	public Enum_Card_fill cardFill{ get; set; }
 
-
+	public int debugView_cardNumber {get {return (int) cardNumber; }}  
+	public int debugView_cardShape {get {return (int) cardShape; }}  
 	void Start ()	{
 		 sr = gameObject.GetComponent<SpriteRenderer>(); 
 	}
@@ -71,11 +72,12 @@ public class Card : MonoBehaviour  {
 				if (m_isCardSelected) {
 						controller [0].deccreanentCardCount ();
 						m_isCardSelected = false;
+						controller [0].removeCard(card);
 						sr.color = new Color (1f, 1f, 1f, 1f);						
 				} else if (controller [0].canPickCard ()) { //check we don't choose more than max cards for set
 						controller [0].increanentCardCount ();
 						RayCast();
-						 controller [0].addCard(card);
+						controller [0].addCard(card);
 
 						m_isCardSelected = true;
 						sr.color = new Color (0.5f, 0.5f, 0.5f, 1f);

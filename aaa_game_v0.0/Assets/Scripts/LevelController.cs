@@ -28,9 +28,23 @@ public class LevelController : MonoBehaviour {
 			{
 				if(setEngine.IsSet(cardsAddedToSet)){
 					Debug.Log("****  SET FOUND  ****");
+				} 
+				else {
+					Debug.Log("!!!!  SET NOT FOUND  !!!!");
 				}
 			}
 		}
+	}
+
+	public void removeCard(GameObject i_card)
+	{
+			for(int i = 0; i < cardsAddedToSet.Length; i++){
+				if (cardsAddedToSet[i] == i_card){
+					cardsAddedToSet[i] = null;
+					Debug.Log ("removeCard");
+					break;
+				}
+			}
 	}
 
 	public void printCardsList()
