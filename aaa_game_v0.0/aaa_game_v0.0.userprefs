@@ -1,14 +1,40 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelController.cs">
     <Files>
-      <File FileName="Assets/Scripts/LevelController.cs" Line="63" Column="68" />
-      <File FileName="Assets/Scripts/Card.cs" Line="30" Column="28" />
-      <File FileName="Assets/Scripts/SetEngine.cs" Line="19" Column="18" />
+      <File FileName="Assets\Scripts\Enums.cs" Line="38" Column="5" />
+      <File FileName="Assets\Scripts\SetEngine.cs" Line="55" Column="1" />
+      <File FileName="Assets\Scripts\LevelController.cs" Line="8" Column="9" />
+      <File FileName="Assets\Scripts\Card.cs" Line="57" Column="18" />
+      <File FileName="Assets\Scripts\Deck.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="LevelController.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>firstCard.cardShape</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="27" />
+      <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="8" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets\Scripts\SetEngine.cs" line="49" offsetX="645" offsetY="816" expression="firstCard" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

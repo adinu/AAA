@@ -8,34 +8,34 @@ public class SetEngine : MonoBehaviour {
 
 	public  bool IsShapeMatch(Card firstCard, Card secondCard, Card thirdCard)
 	{
-		return (firstCard.cardShape == secondCard.cardShape && firstCard.cardShape == thirdCard.cardShape)
+		return (firstCard.m_cardShape == secondCard.m_cardShape && firstCard.m_cardShape == thirdCard.m_cardShape)
 			||
-				(firstCard.cardShape != secondCard.cardShape && firstCard.cardShape != thirdCard.cardShape &&
-				 secondCard.cardShape != thirdCard.cardShape);
+				(firstCard.m_cardShape != secondCard.m_cardShape && firstCard.m_cardShape != thirdCard.m_cardShape &&
+				 secondCard.m_cardShape != thirdCard.m_cardShape);
 	}
 	
 	public  bool IsColorMatch(Card firstCard, Card secondCard, Card thirdCard)
 	{
-		return (firstCard.cardColor == secondCard.cardColor && firstCard.cardColor == thirdCard.cardColor)
+		return (firstCard.m_cardColor == secondCard.m_cardColor && firstCard.m_cardColor == thirdCard.m_cardColor)
 			||
-				(firstCard.cardColor != secondCard.cardColor && firstCard.cardColor != thirdCard.cardColor &&
-				 secondCard.cardColor != thirdCard.cardColor);
+				(firstCard.m_cardColor != secondCard.m_cardColor && firstCard.m_cardColor != thirdCard.m_cardColor &&
+				 secondCard.m_cardColor != thirdCard.m_cardColor);
 	}
 	
 	public  bool IsNumberMatch(Card firstCard, Card secondCard, Card thirdCard)
 	{
-		return (firstCard.cardNumber== secondCard.cardNumber && firstCard.cardNumber == thirdCard.cardNumber)
+		return (firstCard.m_cardNumber== secondCard.m_cardNumber && firstCard.m_cardNumber == thirdCard.m_cardNumber)
 			||
-				(firstCard.cardNumber != secondCard.cardNumber && firstCard.cardNumber != thirdCard.cardNumber &&
-				 secondCard.cardNumber != thirdCard.cardNumber);
+				(firstCard.m_cardNumber != secondCard.m_cardNumber && firstCard.m_cardNumber != thirdCard.m_cardNumber &&
+				 secondCard.m_cardNumber != thirdCard.m_cardNumber);
 	}
 	
 	public  bool IsShadingMatch(Card firstCard, Card secondCard, Card thirdCard)
 	{
-		return (firstCard.cardFill == secondCard.cardFill && firstCard.cardFill == thirdCard.cardFill)
+		return (firstCard.m_cardFill == secondCard.m_cardFill && firstCard.m_cardFill == thirdCard.m_cardFill)
 			||
-				(firstCard.cardFill != secondCard.cardFill && firstCard.cardFill != thirdCard.cardFill &&
-				 secondCard.cardFill != thirdCard.cardFill);
+				(firstCard.m_cardFill != secondCard.m_cardFill && firstCard.m_cardFill != thirdCard.m_cardFill &&
+				 secondCard.m_cardFill != thirdCard.m_cardFill);
 	}
 
 
@@ -43,12 +43,17 @@ public class SetEngine : MonoBehaviour {
 		Card firstCard = cardsAddedToSet[0].GetComponent<Card>();
 		Card secondCard = cardsAddedToSet[1].GetComponent<Card>();
 		Card thirdCard= cardsAddedToSet[2].GetComponent<Card>();
+
 		Debug.Log("IsSet called");
 
 		bool shapeMatch = IsShapeMatch( firstCard, secondCard, thirdCard);
+		Debug.Log("shapeMatch " + shapeMatch);
 		bool colorMatch = IsColorMatch( firstCard,  secondCard,  thirdCard);
+		Debug.Log("colorMatch " + colorMatch);
 		bool numberMatch = IsNumberMatch( firstCard,  secondCard,  thirdCard);
+		Debug.Log("numberMatch " + numberMatch);
 		bool shadingMatch = IsShadingMatch( firstCard,  secondCard,  thirdCard);
+		Debug.Log("shadingMatch " + shadingMatch);
 		
 		return shapeMatch && colorMatch && numberMatch && shadingMatch;
 	}
