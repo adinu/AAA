@@ -43,6 +43,8 @@ public class LevelController : MonoBehaviour {
 				if(setEngine.IsSet(cardsAddedToSet)){
 					Debug.Log("****  SET FOUND  ****");
 					StartCoroutine(showTextToUser("SET FOUND!", 3));
+					Application.LoadLevel("Level2TimerDemo 1");
+
 					
 					
 					
