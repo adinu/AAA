@@ -29,13 +29,13 @@ public class TimerEvents : MonoBehaviour {
 
 	public void OnGUI()
 	{
-		if (GUI.Button (new Rect (20, 20, 200, 30), "Add Time")) {
+		/*if (GUI.Button (new Rect (20, 20, 200, 30), "Add Time")) {
 			addTimeToTimer (deltaTime);
 		}
 
 		if (GUI.Button (new Rect (20, 70, 200, 30), "Subtact Time")) {
 			substractTimeFromTimer (deltaTime);
-		}
+		}*/
 
 	 }
 

@@ -6,7 +6,7 @@ public class GUIDummy : MonoBehaviour {
 	// Use this for initialization
 	void OnGUI() {
 		SessionScore currentScore = obj.GetComponent<SessionScore>();
-		if (GUI.Button (new Rect (20, 250, 200, 30), "Add Score")) {
+		/*if (GUI.Button (new Rect (20, 250, 200, 30), "Add Score")) {
 			currentScore.AddScore(5);
 			print(currentScore.getScore());
 		}
@@ -19,7 +19,7 @@ public class GUIDummy : MonoBehaviour {
 
 			Application.LoadLevel("scene_1.0");
 
-		}
+		}*/
 	
 
 	}
