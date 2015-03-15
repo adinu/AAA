@@ -16,7 +16,7 @@ public class GuiBtnsManager : MonoBehaviour {
 	public void playLevel1()
 	{
 
-		Application.LoadLevel("Level1");
+		Application.LoadLevel(1);
 	}
 
 	// Quit the game

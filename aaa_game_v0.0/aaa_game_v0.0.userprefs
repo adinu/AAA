@@ -1,21 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Tut1Script.cs">
     <Files>
-      <File FileName="Assets\Scripts\LevelManager.cs" Line="8" Column="29" />
-      <File FileName="Assets\Scripts\SetEngine.cs" Line="14" Column="39" />
-      <File FileName="Assets\Scripts\TimerEvents.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUIDummy.cs" Line="20" Column="7" />
-      <File FileName="Assets\Scripts\Card.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ScoreManager.cs" Line="14" Column="3" />
-      <File FileName="Assets\Scripts\SessionScore.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelController.cs" Line="172" Column="2" />
+      <File FileName="Assets/Scripts/LevelController.cs" Line="20" Column="37" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GuiBtnsManager.cs" Line="19" Column="26" />
+      <File FileName="Assets/Tut1Script.cs" Line="16" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\WorkSpace\Unity\AAA\aaa_game_v0.0\Assets\Scripts\LevelController.cs" line="117" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

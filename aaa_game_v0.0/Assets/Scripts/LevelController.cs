@@ -10,13 +10,15 @@ public class LevelController : MonoBehaviour {
 	
 	//TIMER
 	public float startTime;
-	private string currentTime;
 	public Slider timerSlider;
 	public Text timerText;
 	private bool isTimeUp = false;
+	private string currentTime;
 
 
 	public GameObject setEngineObject;
+	private static int currentLevel = 4;
+
 	public Text textToPlayer;
 	public int numCardsInSet;
 	private  int numOfCardsSelected = 0;
@@ -42,31 +44,33 @@ public class LevelController : MonoBehaviour {
 			{
 				if(setEngine.IsSet(cardsAddedToSet)){
 					Debug.Log("****  SET FOUND  ****");
-					StartCoroutine(showTextToUser("SET FOUND!", 3));
-					Application.LoadLevel("Level2TimerDemo 1");
-
-					
-					
-					
-				} 
+					StartCoroutine(showTextToUser("SET FOUND!", 3, true));
+				}
 				else {
 					Debug.Log("!!!!  SET NOT FOUND  !!!!");
-					StartCoroutine(showTextToUser("SET Not FOUND!", 3));
+					StartCoroutine(showTextToUser("SET Not FOUND!", 3, false));
 				}
 			}
 		}
 	}
 	
-	IEnumerator showTextToUser(string message, float delay) {
+	IEnumerator showTextToUser(string message, float delay, bool continueToNextLevel) {
 		//Debug.Log ("text" + text);
 		textToPlayer.text = message;
 		textToPlayer.enabled = true;
 		print(Time.time);
 		yield return new WaitForSeconds(delay);
 		textToPlayer.enabled = false;
-		
-		
+		if (continueToNextLevel) {
+			moveToNextLevel();
+				}
+
 	}
+
+	public void moveToNextLevel(){
+		Application.LoadLevel(currentLevel);
+		currentLevel++;
+		}
 	
 	
 	public void removeCard(GameObject i_card)
