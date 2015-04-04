@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CardController.cs" />
      <Compile Include="Assets\Scripts\Card.cs" />
      <Compile Include="Assets\Scripts\Deck.cs" />
      <Compile Include="Assets\Scripts\Enums.cs" />
@@ -63,7 +64,6 @@
      <Compile Include="Assets\Scripts\arrowScript.cs" />
      <Compile Include="Assets\Tut1Script.cs" />
      <Compile Include="Assets\Tutorial2.cs" />
-     <Compile Include="Assets\movement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
