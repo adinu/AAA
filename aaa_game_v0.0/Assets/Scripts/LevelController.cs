@@ -7,16 +7,24 @@ using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour {
 
-	
+    /*
 	//TIMER
 	public float startTime;
 	public Slider timerSlider;
 	public Text timerText;
 	private bool isTimeUp = false;
-	private string currentTime;
+	private string currentTime;*/
+
+    private static int counter = 0;
+
+    private float startTime;
+    private Slider timerSlider;
+    private Text timerText;
+    private bool isTimeUp = false;
+    private string currentTime;
 
 
-	public GameObject setEngineObject;
+    public GameObject setEngineObject;
 	private static int currentLevel = 4;
 
 	public Text textToPlayer;
@@ -39,8 +47,10 @@ public class LevelController : MonoBehaviour {
 					break;
 				}
 			}
-			
-			if(numCardsInSet == numOfCardsSelected)
+
+            increanentCardCount();
+
+            if (numCardsInSet == numOfCardsSelected)
 			{
 				if(setEngine.IsSet(cardsAddedToSet)){
 					Debug.Log("****  SET FOUND  ****");
@@ -52,7 +62,8 @@ public class LevelController : MonoBehaviour {
 				}
 			}
 		}
-	}
+        
+    }
 	
 	IEnumerator showTextToUser(string message, float delay, bool continueToNextLevel) {
 		//Debug.Log ("text" + text);
@@ -89,18 +100,20 @@ public class LevelController : MonoBehaviour {
 		foreach (GameObject card in cardsAddedToSet) /*Search empty place and add card*/
 		{
 			if(card != null) {
-				Debug.Log(( card.GetComponent<Card>().m_cardColor.ToString() )+
-				          " / " + card.GetComponent<Card>().m_cardNumber.ToString() +
-				          "\n" + card.GetComponent<Card>().m_cardFill.ToString() +
-				          " / " + card.GetComponent<Card>().m_cardShape.ToString() );
+				Debug.Log(( card.GetComponent<Card>().cardColor.ToString() )+
+				          " / " + card.GetComponent<Card>().cardNumber.ToString() +
+				          "\n" + card.GetComponent<Card>().cardFill.ToString() +
+				          " / " + card.GetComponent<Card>().cardShape.ToString() );
 			}
 		}
 	}
 	
 	public void increanentCardCount(){
 		numOfCardsSelected++;
-		Debug.Log(numOfCardsSelected + "increanentCardCount");
-	}
+        counter++;
+		Debug.Log("increanentCardCount " + "numOfCardsSelected: " + numOfCardsSelected 
+            + "\n" + "counter: " + counter);
+    }
 	
 	public void deccreanentCardCount(){
 		numOfCardsSelected--;
@@ -112,13 +125,14 @@ public class LevelController : MonoBehaviour {
 	
 	public bool canPickCard()
 	{
-		if (numOfCardsSelected < numCardsInSet) {
+        if (numOfCardsSelected < numCardsInSet) {
 			canPeakCard = true;
 		}else{
 			canPeakCard =false;
 		}
 		
-		Debug.Log("numOfCardsSelected:" + numOfCardsSelected + "canPeakCard:" + canPeakCard);
+		Debug.Log("numOfCardsSelected: " + numOfCardsSelected + "\n" +  "canPeakCard: " + canPeakCard
+            + "\n" + " counter: " + counter);
 		
 		return canPeakCard;
 	}
@@ -146,7 +160,7 @@ public class LevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timerUpdate ();
+		//timerUpdate ();
 		
 	}
 	

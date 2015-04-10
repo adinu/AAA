@@ -31,14 +31,18 @@ public class GameManager : MonoBehaviour {
 			ScoreManager.score += 5;
 		}
 		
-		if (GUI.Button (new Rect (20, 180, 200, 30), "Reset Score")) {
-			ScoreManager.score = 0;
+		if (GUI.Button (new Rect (20, 180, 200, 30), "Reset High Score")) {
+			LeaderBoard.ResetHighScore();
 		}
 		
 		if (GUI.Button (new Rect (20, 240, 200, 30), "Remove Points")) {
 			if(ScoreManager.score >= 5) {
 			ScoreManager.score -= 5;
 			}
+		}
+
+		if (GUI.Button (new Rect (20, 300, 200, 30), "Save Score")) {
+			LeaderBoard.SaveHighScore(ScoreManager.score);
 		}
 		
 	}

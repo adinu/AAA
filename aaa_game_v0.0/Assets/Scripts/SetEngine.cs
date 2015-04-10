@@ -8,34 +8,34 @@ public class SetEngine : MonoBehaviour {
 
 	public  bool IsShapeMatch(Card firstCard, Card secondCard, Card thirdCard)
 	{
-		return (firstCard.m_cardShape == secondCard.m_cardShape && firstCard.m_cardShape == thirdCard.m_cardShape)
+		return (firstCard.cardShape == secondCard.cardShape && firstCard.cardShape == thirdCard.cardShape)
 			||
-				(firstCard.m_cardShape != secondCard.m_cardShape && firstCard.m_cardShape != thirdCard.m_cardShape &&
-				 secondCard.m_cardShape != thirdCard.m_cardShape);
+				(firstCard.cardShape != secondCard.cardShape && firstCard.cardShape != thirdCard.cardShape &&
+				 secondCard.cardShape != thirdCard.cardShape);
 	}
 	
 	public  bool IsColorMatch(Card firstCard, Card secondCard, Card thirdCard)
 	{
-		return (firstCard.m_cardColor == secondCard.m_cardColor && firstCard.m_cardColor == thirdCard.m_cardColor)
+		return (firstCard.cardColor == secondCard.cardColor && firstCard.cardColor == thirdCard.cardColor)
 			||
-				(firstCard.m_cardColor != secondCard.m_cardColor && firstCard.m_cardColor != thirdCard.m_cardColor &&
-				 secondCard.m_cardColor != thirdCard.m_cardColor);
+				(firstCard.cardColor != secondCard.cardColor && firstCard.cardColor != thirdCard.cardColor &&
+				 secondCard.cardColor != thirdCard.cardColor);
 	}
 	
 	public  bool IsNumberMatch(Card firstCard, Card secondCard, Card thirdCard)
 	{
-		return (firstCard.m_cardNumber== secondCard.m_cardNumber && firstCard.m_cardNumber == thirdCard.m_cardNumber)
+		return (firstCard.cardNumber== secondCard.cardNumber && firstCard.cardNumber == thirdCard.cardNumber)
 			||
-				(firstCard.m_cardNumber != secondCard.m_cardNumber && firstCard.m_cardNumber != thirdCard.m_cardNumber &&
-				 secondCard.m_cardNumber != thirdCard.m_cardNumber);
+				(firstCard.cardNumber != secondCard.cardNumber && firstCard.cardNumber != thirdCard.cardNumber &&
+				 secondCard.cardNumber != thirdCard.cardNumber);
 	}
 	
 	public  bool IsShadingMatch(Card firstCard, Card secondCard, Card thirdCard)
 	{
-		return (firstCard.m_cardFill == secondCard.m_cardFill && firstCard.m_cardFill == thirdCard.m_cardFill)
+		return (firstCard.cardFill == secondCard.cardFill && firstCard.cardFill == thirdCard.cardFill)
 			||
-				(firstCard.m_cardFill != secondCard.m_cardFill && firstCard.m_cardFill != thirdCard.m_cardFill &&
-				 secondCard.m_cardFill != thirdCard.m_cardFill);
+				(firstCard.cardFill != secondCard.cardFill && firstCard.cardFill != thirdCard.cardFill &&
+				 secondCard.cardFill != thirdCard.cardFill);
 	}
 
 
@@ -55,25 +55,27 @@ public class SetEngine : MonoBehaviour {
 		bool shadingMatch = IsShadingMatch( firstCard,  secondCard,  thirdCard);
 		Debug.Log("shadingMatch " + shadingMatch);
 		
-		return shapeMatch && colorMatch && numberMatch && shadingMatch;
+		return shapeMatch && colorMatch && 
+            //numberMatch &&
+            shadingMatch;
 	}
 
 
 
-//		Debug.Log(( card1.m_cardColor.ToString() )+
-//		          " / " + card1.m_cardNumber.ToString() +
-//		          "\n" + card1.m_cardFill.ToString() +
-//		          " / " + card1.m_cardFill.ToString() );
+//		Debug.Log(( card1.cardColor.ToString() )+
+//		          " / " + card1.cardNumber.ToString() +
+//		          "\n" + card1.cardFill.ToString() +
+//		          " / " + card1.cardFill.ToString() );
 //
-//		Debug.Log(( card2.m_cardColor.ToString() )+
-//		          " / " + card2.m_cardNumber.ToString() +
-//		          "\n" + card2.m_cardFill.ToString() +
-//		          " / " + card2.m_cardFill.ToString() );
+//		Debug.Log(( card2.cardColor.ToString() )+
+//		          " / " + card2.cardNumber.ToString() +
+//		          "\n" + card2.cardFill.ToString() +
+//		          " / " + card2.cardFill.ToString() );
 //
-//		Debug.Log(( card3.m_cardColor.ToString() )+
-//		          " / " + card3.m_cardNumber.ToString() +
-//		          "\n" + card3.m_cardFill.ToString() +
-//		          " / " + card3.m_cardFill.ToString() );
+//		Debug.Log(( card3.cardColor.ToString() )+
+//		          " / " + card3.cardNumber.ToString() +
+//		          "\n" + card3.cardFill.ToString() +
+//		          " / " + card3.cardFill.ToString() );
 
 		/* check color is all identical or all diffrent*/
 
